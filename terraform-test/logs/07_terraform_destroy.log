@@ -1,0 +1,205 @@
+[0m[1mvar.project_id[0m
+  GCP Project ID
+
+  [1mEnter a value:[0m [0m
+[0m[1mgoogle_storage_bucket.stas_demo_bucket: Refreshing state... [id=my-ucu-de-2627-stas-demo-data-bucket][0m
+[0m[1mgoogle_bigquery_dataset.stas_demo_dataset: Refreshing state... [id=projects/my-ucu-de-2627-stas/datasets/stas_demo_dataset][0m
+[0m[1mgoogle_compute_instance.demo_vm: Refreshing state... [id=projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # google_bigquery_dataset.stas_demo_dataset[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "google_bigquery_dataset" "stas_demo_dataset" {
+      [31m-[0m[0m creation_time                   = 1789731224837 [90m-> null[0m[0m
+      [31m-[0m[0m dataset_id                      = "stas_demo_dataset" [90m-> null[0m[0m
+      [31m-[0m[0m default_partition_expiration_ms = 0 [90m-> null[0m[0m
+      [31m-[0m[0m default_table_expiration_ms     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m delete_contents_on_destroy      = true [90m-> null[0m[0m
+      [31m-[0m[0m description                     = "My test BigQuery dataset created via Terraform" [90m-> null[0m[0m
+      [31m-[0m[0m effective_labels                = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m etag                            = "TPgXWBzoRpH3MNF//RRcSA==" [90m-> null[0m[0m
+      [31m-[0m[0m friendly_name                   = "Test Demo Dataset" [90m-> null[0m[0m
+      [31m-[0m[0m id                              = "projects/my-ucu-de-2627-stas/datasets/stas_demo_dataset" [90m-> null[0m[0m
+      [31m-[0m[0m is_case_insensitive             = false [90m-> null[0m[0m
+      [31m-[0m[0m labels                          = {} [90m-> null[0m[0m
+      [31m-[0m[0m last_modified_time              = 1789731224837 [90m-> null[0m[0m
+      [31m-[0m[0m location                        = "US" [90m-> null[0m[0m
+      [31m-[0m[0m max_time_travel_hours           = "168" [90m-> null[0m[0m
+      [31m-[0m[0m project                         = "my-ucu-de-2627-stas" [90m-> null[0m[0m
+      [31m-[0m[0m resource_tags                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m self_link                       = "https://bigquery.googleapis.com/bigquery/v2/projects/my-ucu-de-2627-stas/datasets/stas_demo_dataset" [90m-> null[0m[0m
+      [31m-[0m[0m terraform_labels                = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m access {
+          [31m-[0m[0m role           = "OWNER" [90m-> null[0m[0m
+          [31m-[0m[0m user_by_email  = "Stanislav.Nastasiak@gmail.com" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m access {
+          [31m-[0m[0m role           = "OWNER" [90m-> null[0m[0m
+          [31m-[0m[0m special_group  = "projectOwners" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m access {
+          [31m-[0m[0m role           = "READER" [90m-> null[0m[0m
+          [31m-[0m[0m special_group  = "projectReaders" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m access {
+          [31m-[0m[0m role           = "WRITER" [90m-> null[0m[0m
+          [31m-[0m[0m special_group  = "projectWriters" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # google_compute_instance.demo_vm[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "google_compute_instance" "demo_vm" {
+      [31m-[0m[0m can_ip_forward             = false [90m-> null[0m[0m
+      [31m-[0m[0m cpu_platform               = "Intel Broadwell" [90m-> null[0m[0m
+      [31m-[0m[0m creation_timestamp         = "2026-09-18T04:41:55.145-07:00" [90m-> null[0m[0m
+      [31m-[0m[0m current_status             = "RUNNING" [90m-> null[0m[0m
+      [31m-[0m[0m deletion_protection        = false [90m-> null[0m[0m
+      [31m-[0m[0m effective_labels           = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m enable_display             = false [90m-> null[0m[0m
+      [31m-[0m[0m id                         = "projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance" [90m-> null[0m[0m
+      [31m-[0m[0m instance_id                = "98414720431725933" [90m-> null[0m[0m
+      [31m-[0m[0m label_fingerprint          = "vezUS-42LLM=" [90m-> null[0m[0m
+      [31m-[0m[0m labels                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m machine_type               = "e2-micro" [90m-> null[0m[0m
+      [31m-[0m[0m metadata                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m metadata_fingerprint       = "-RFTPRPs0uM=" [90m-> null[0m[0m
+      [31m-[0m[0m name                       = "demo-vm-instance" [90m-> null[0m[0m
+      [31m-[0m[0m project                    = "my-ucu-de-2627-stas" [90m-> null[0m[0m
+      [31m-[0m[0m resource_policies          = [] [90m-> null[0m[0m
+      [31m-[0m[0m self_link                  = "https://www.googleapis.com/compute/v1/projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance" [90m-> null[0m[0m
+      [31m-[0m[0m tags                       = [] [90m-> null[0m[0m
+      [31m-[0m[0m tags_fingerprint           = "42WmSpB8rSM=" [90m-> null[0m[0m
+      [31m-[0m[0m terraform_labels           = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m zone                       = "us-central1-a" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m boot_disk {
+          [31m-[0m[0m auto_delete                     = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name                     = "persistent-disk-0" [90m-> null[0m[0m
+          [31m-[0m[0m force_attach                    = false [90m-> null[0m[0m
+          [31m-[0m[0m guest_os_features               = [
+              [31m-[0m[0m "UEFI_COMPATIBLE",
+              [31m-[0m[0m "VIRTIO_SCSI_MULTIQUEUE",
+              [31m-[0m[0m "GVNIC",
+              [31m-[0m[0m "SEV_CAPABLE",
+              [31m-[0m[0m "SEV_LIVE_MIGRATABLE_V2",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m mode                            = "READ_WRITE" [90m-> null[0m[0m
+          [31m-[0m[0m source                          = "https://www.googleapis.com/compute/v1/projects/my-ucu-de-2627-stas/zones/us-central1-a/disks/demo-vm-instance" [90m-> null[0m[0m
+            [90m# (6 unchanged attributes hidden)[0m[0m
+
+          [31m-[0m[0m initialize_params {
+              [31m-[0m[0m architecture                = "X86_64" [90m-> null[0m[0m
+              [31m-[0m[0m enable_confidential_compute = false [90m-> null[0m[0m
+              [31m-[0m[0m image                       = "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-12-bookworm-v20260908" [90m-> null[0m[0m
+              [31m-[0m[0m labels                      = {} [90m-> null[0m[0m
+              [31m-[0m[0m provisioned_iops            = 0 [90m-> null[0m[0m
+              [31m-[0m[0m provisioned_throughput      = 0 [90m-> null[0m[0m
+              [31m-[0m[0m resource_manager_tags       = {} [90m-> null[0m[0m
+              [31m-[0m[0m resource_policies           = [] [90m-> null[0m[0m
+              [31m-[0m[0m size                        = 10 [90m-> null[0m[0m
+              [31m-[0m[0m type                        = "pd-standard" [90m-> null[0m[0m
+                [90m# (2 unchanged attributes hidden)[0m[0m
+            }
+        }
+
+      [31m-[0m[0m network_interface {
+          [31m-[0m[0m internal_ipv6_prefix_length = 0 [90m-> null[0m[0m
+          [31m-[0m[0m name                        = "nic0" [90m-> null[0m[0m
+          [31m-[0m[0m network                     = "https://www.googleapis.com/compute/v1/projects/my-ucu-de-2627-stas/global/networks/default" [90m-> null[0m[0m
+          [31m-[0m[0m network_ip                  = "10.128.0.2" [90m-> null[0m[0m
+          [31m-[0m[0m queue_count                 = 0 [90m-> null[0m[0m
+          [31m-[0m[0m stack_type                  = "IPV4_ONLY" [90m-> null[0m[0m
+          [31m-[0m[0m subnetwork                  = "https://www.googleapis.com/compute/v1/projects/my-ucu-de-2627-stas/regions/us-central1/subnetworks/default" [90m-> null[0m[0m
+          [31m-[0m[0m subnetwork_project          = "my-ucu-de-2627-stas" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+
+          [31m-[0m[0m access_config {
+              [31m-[0m[0m nat_ip                 = "136.116.236.98" [90m-> null[0m[0m
+              [31m-[0m[0m network_tier           = "PREMIUM" [90m-> null[0m[0m
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+
+      [31m-[0m[0m scheduling {
+          [31m-[0m[0m automatic_restart           = true [90m-> null[0m[0m
+          [31m-[0m[0m availability_domain         = 0 [90m-> null[0m[0m
+          [31m-[0m[0m min_node_cpus               = 0 [90m-> null[0m[0m
+          [31m-[0m[0m on_host_maintenance         = "MIGRATE" [90m-> null[0m[0m
+          [31m-[0m[0m preemptible                 = false [90m-> null[0m[0m
+          [31m-[0m[0m provisioning_model          = "STANDARD" [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+      [31m-[0m[0m shielded_instance_config {
+          [31m-[0m[0m enable_integrity_monitoring = true [90m-> null[0m[0m
+          [31m-[0m[0m enable_secure_boot          = false [90m-> null[0m[0m
+          [31m-[0m[0m enable_vtpm                 = true [90m-> null[0m[0m
+        }
+    }
+
+[1m  # google_storage_bucket.stas_demo_bucket[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "google_storage_bucket" "stas_demo_bucket" {
+      [31m-[0m[0m default_event_based_hold    = false [90m-> null[0m[0m
+      [31m-[0m[0m effective_labels            = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m enable_object_retention     = false [90m-> null[0m[0m
+      [31m-[0m[0m force_destroy               = true [90m-> null[0m[0m
+      [31m-[0m[0m id                          = "my-ucu-de-2627-stas-demo-data-bucket" [90m-> null[0m[0m
+      [31m-[0m[0m labels                      = {} [90m-> null[0m[0m
+      [31m-[0m[0m location                    = "US-CENTRAL1" [90m-> null[0m[0m
+      [31m-[0m[0m name                        = "my-ucu-de-2627-stas-demo-data-bucket" [90m-> null[0m[0m
+      [31m-[0m[0m project                     = "my-ucu-de-2627-stas" [90m-> null[0m[0m
+      [31m-[0m[0m project_number              = 721534003574 [90m-> null[0m[0m
+      [31m-[0m[0m public_access_prevention    = "enforced" [90m-> null[0m[0m
+      [31m-[0m[0m requester_pays              = false [90m-> null[0m[0m
+      [31m-[0m[0m self_link                   = "https://www.googleapis.com/storage/v1/b/my-ucu-de-2627-stas-demo-data-bucket" [90m-> null[0m[0m
+      [31m-[0m[0m storage_class               = "STANDARD" [90m-> null[0m[0m
+      [31m-[0m[0m terraform_labels            = {
+          [31m-[0m[0m "goog-terraform-provisioned" = "true"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m time_created                = "2026-09-18T11:33:45.588Z" [90m-> null[0m[0m
+      [31m-[0m[0m uniform_bucket_level_access = true [90m-> null[0m[0m
+      [31m-[0m[0m updated                     = "2026-09-18T11:33:45.588Z" [90m-> null[0m[0m
+      [31m-[0m[0m url                         = "gs://my-ucu-de-2627-stas-demo-data-bucket" [90m-> null[0m[0m
+
+      [31m-[0m[0m hierarchical_namespace {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m soft_delete_policy {
+          [31m-[0m[0m effective_time             = "2026-09-18T11:33:45.588Z" [90m-> null[0m[0m
+          [31m-[0m[0m retention_duration_seconds = 604800 [90m-> null[0m[0m
+        }
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 3 to destroy.
+[0m[1mgoogle_storage_bucket.stas_demo_bucket: Destroying... [id=my-ucu-de-2627-stas-demo-data-bucket][0m[0m
+[0m[1mgoogle_compute_instance.demo_vm: Destroying... [id=projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance][0m[0m
+[0m[1mgoogle_bigquery_dataset.stas_demo_dataset: Destroying... [id=projects/my-ucu-de-2627-stas/datasets/stas_demo_dataset][0m[0m
+[0m[1mgoogle_bigquery_dataset.stas_demo_dataset: Destruction complete after 1s[0m
+[0m[1mgoogle_storage_bucket.stas_demo_bucket: Destruction complete after 4s[0m
+[0m[1mgoogle_compute_instance.demo_vm: Still destroying... [id=projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance, 00m10s elapsed][0m[0m
+[0m[1mgoogle_compute_instance.demo_vm: Still destroying... [id=projects/my-ucu-de-2627-stas/zones/us-central1-a/instances/demo-vm-instance, 00m20s elapsed][0m[0m
+[0m[1mgoogle_compute_instance.demo_vm: Destruction complete after 23s[0m
+[0m[1m[32m
+Destroy complete! Resources: 3 destroyed.[0m
