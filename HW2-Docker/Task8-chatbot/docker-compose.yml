@@ -1,0 +1,16 @@
+services:
+  web: # service1 - Streamlit UI
+    # build:
+      # context: .
+      # dockerfile: Dockerfile_multistage
+    image: stannst/chatbotllm:1.0
+    container_name: chatbot
+    ports:
+      - "8050:8050"
+    models: # depends_on
+      llm:
+        endpoint_var: LLM_URL
+        model_var: LLM_MODEL
+models:
+  llm: # service2 - LLM
+    model: ai/smollm2:360M-Q4_K_M

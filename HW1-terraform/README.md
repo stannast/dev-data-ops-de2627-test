@@ -1,5 +1,3 @@
-## DevOps test tasks
-
 ### Terraform GCP
 
 `terraform-test/`

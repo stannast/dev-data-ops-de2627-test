@@ -1,0 +1,27 @@
+# Stage 1: builder
+FROM python:3.12-slim AS builder
+
+WORKDIR /build
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: runtime 
+FROM python:3.12-slim
+
+RUN groupadd -r webservice && useradd --no-log-init -r -m -g webservice webservice
+
+# Main part, only venv from bulder stage 1, nothing else
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH" \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+COPY --chown=webservice:webservice ./web .
+
+USER webservice:webservice
+EXPOSE 8050
+
+CMD ["streamlit", "run", "web.py", "--server.port=8050"]
