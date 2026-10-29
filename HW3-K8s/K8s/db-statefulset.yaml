@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+  labels:
+    app: db
+spec:
+  serviceName: db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:10-focal
+          args: ["--default-authentication-plugin=mysql_native_password"]
+          ports:
+            - containerPort: 3306
+              name: mysql
+          env:
+            - name: MYSQL_DATABASE
+              value: example
+            - name: MYSQL_ROOT_PASSWORD_FILE
+              value: /run/secrets/db-password
+          volumeMounts:
+            - name: db-data
+              mountPath: /var/lib/mysql
+            - name: db-password
+              mountPath: /run/secrets/db-password
+              subPath: db-password
+              readOnly: true
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - mysqladmin ping -h 127.0.0.1 --password="$(cat /run/secrets/db-password)" --silent
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - mysqladmin ping -h 127.0.0.1 --password="$(cat /run/secrets/db-password)" --silent
+            initialDelaySeconds: 45
+            periodSeconds: 10
+            timeoutSeconds: 5
+          resources:
+            requests: { cpu: 100m, memory: 256Mi }
+            limits:   { memory: 1024Mi }
+      volumes:
+        - name: db-data
+          persistentVolumeClaim:
+            claimName: db-data-pvc
+        - name: db-password
+          secret:
+            secretName: db-password
